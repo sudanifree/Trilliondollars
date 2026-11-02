@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore GitHub repositories with the Trillion Dollar Oracle.">
+    <title>Trillion Dollar Oracle</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Trillion Dollar Oracle</h1>
+        <p class="muted">A playful, heuristic ranking—not financial advice or a real prediction.</p>
+      </header>
+
+      <form id="scan-form">
+        <label>
+          API base URL
+          <input id="api-url" type="url" placeholder="https://your-api.example.com" required>
+        </label>
+        <label>
+          GitHub search query
+          <input id="query" type="text" value="stars:&gt;1000" required>
+        </label>
+        <label>
+          Repositories
+          <input id="limit" type="number" min="1" max="100" value="10" required>
+        </label>
+        <button id="submit" type="submit">Scan repositories</button>
+      </form>
+
+      <p id="status" class="muted" role="status" aria-live="polite"></p>
+      <section id="results" hidden>
+        <h2>Top 10 candidates</h2>
+        <div id="top-results"></div>
+        <h2>All results</h2>
+        <div id="all-results"></div>
+      </section>
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>
